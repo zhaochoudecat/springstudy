@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="com.example.pojo.Address">
+        <property name="address" value="杭州"/>
+    </bean>
+
+    <bean id="stu" class="com.example.pojo.Student">
+        <property name="name" value="xiaoming"/>
+        <property name="address" ref="address"/>
+
+        <!--数组-->
+        <property name="books">
+            <array>
+                <value>夜晚的潜水艇</value>
+                <value>古文观止</value>
+            </array>
+        </property>
+
+        <!--list -->
+        <property name="hobby">
+            <list>
+                <value>看书</value>
+                <value>跑步</value>
+            </list>
+        </property>
+
+        <!--map-->
+        <property name="card">
+            <map>
+                <entry key="招商" value="123"/>
+                <entry key="工商" value="456"/>
+            </map>
+        </property>
+
+        <!--set-->
+        <property name="games">
+            <set>
+                <value>LOL</value>
+                <value>健身环</value>
+            </set>
+        </property>
+
+<!--        null-->
+        <property name="wife" >
+            <null></null>
+        </property>
+
+        <property name="info">
+            <props>
+                <prop key="学号">2021</prop>
+                <prop key="成绩">75</prop>
+            </props>
+        </property>
+    </bean>
+
+</beans>
