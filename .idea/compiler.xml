@@ -6,9 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="spring-06-anno" />
         <module name="spring-08-aop" />
         <module name="spring-04-di" />
+        <module name="spring-09-aopdemo" />
+        <module name="spring-06-anno" />
         <module name="spring-05-autowired" />
         <module name="spring-07-config" />
       </profile>
@@ -16,6 +17,7 @@
     <bytecodeTargetLevel target="8">
       <module name="sping-07-appconfig" target="1.5" />
       <module name="spring-07-appconfig" target="1.5" />
+      <module name="spring-08-aop" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
