@@ -9,14 +9,14 @@ public class UserServiceImpl implements UserService{
     }
 
     public void delete() {
-
+        System.out.println("delete-->");
     }
 
     public void update() {
-
+        System.out.println("update-->");
     }
 
     public void query() {
-
+        System.out.println("query-->");
     }
 }

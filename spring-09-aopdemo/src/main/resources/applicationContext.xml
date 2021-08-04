@@ -12,22 +12,28 @@
     <bean id = "beforeLog" class="com.example.log.BeforeLog"/>
     <bean id="diy" class="com.example.diy.DiyPointCut"/>
 
-    <aop:config>
-        <!--切入点 expression:表达式匹配要执行的方法-->
-        <aop:pointcut id="pointcut1"
-              expression="execution(* com.example.service.UserServiceImpl.*(..))"/>
-        <!--执行环绕; advice-ref执行方法 . pointcut-ref切入点-->
-        <aop:advisor advice-ref="beforeLog" pointcut-ref="pointcut1"/>
-        <aop:advisor advice-ref="afterLog" pointcut-ref="pointcut1"/>
-    </aop:config>
+<!--    第三种 注解-->
+    <bean id="annotation" class="com.example.diy.AnnotationPointCut"/>
+    <!--JDK(默认 proxy-target-class="false") cglib （true）-->
+    <aop:aspectj-autoproxy proxy-target-class="false"/>
 
-    <aop:config>
-        <!--第二种方式：使用AOP的标签实现-->
-        <aop:aspect ref="diy">
-            <aop:pointcut id="point"
-                  expression="execution(* com.example.service.UserServiceImpl.*(..))"/>
-            <aop:before method="before" pointcut-ref="point"/>
-            <aop:after method="after" pointcut-ref="point"/>
-        </aop:aspect>
-    </aop:config>
+
+<!--    <aop:config>-->
+<!--        &lt;!&ndash;切入点 expression:表达式匹配要执行的方法&ndash;&gt;-->
+<!--        <aop:pointcut id="pointcut1"-->
+<!--              expression="execution(* com.example.service.UserServiceImpl.*(..))"/>-->
+<!--        &lt;!&ndash;执行环绕; advice-ref执行方法 . pointcut-ref切入点&ndash;&gt;-->
+<!--        <aop:advisor advice-ref="beforeLog" pointcut-ref="pointcut1"/>-->
+<!--        <aop:advisor advice-ref="afterLog" pointcut-ref="pointcut1"/>-->
+<!--    </aop:config>-->
+
+<!--    <aop:config>-->
+<!--        &lt;!&ndash;第二种方式：使用AOP的标签实现&ndash;&gt;-->
+<!--        <aop:aspect ref="diy">-->
+<!--            <aop:pointcut id="point"-->
+<!--                  expression="execution(* com.example.service.UserServiceImpl.*(..))"/>-->
+<!--            <aop:before method="before" pointcut-ref="point"/>-->
+<!--            <aop:after method="after" pointcut-ref="point"/>-->
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
 </beans>
